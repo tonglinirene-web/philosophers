@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simulation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ltong <ltong@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tonglin <tonglin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/27 11:41:56 by ltong             #+#    #+#             */
-/*   Updated: 2026/08/27 11:41:57 by ltong            ###   ########.fr       */
+/*   Created: 2026/07/20 11:41:56 by ltong             #+#    #+#             */
+/*   Updated: 2026/08/27 23:26:10 by ltong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ void	cleanup_table(t_table *table)
 	}
 	pthread_mutex_destroy(&table->print_lock);
 	pthread_mutex_destroy(&table->state_lock);
-	pthread_mutex_destroy(&table->fork_lock);
 	free(table->forks);
 	free(table->philos);
 }

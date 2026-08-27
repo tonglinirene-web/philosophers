@@ -46,7 +46,6 @@ typedef struct s_table
 	int				stop;
 	long			start_time;
 	pthread_mutex_t	*forks;
-	pthread_mutex_t	fork_lock;
 	pthread_mutex_t	print_lock;
 	pthread_mutex_t	state_lock;
 	t_philo			*philos;

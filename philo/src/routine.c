@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   routine.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ltong <ltong@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tonglin <tonglin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/27 11:41:27 by ltong             #+#    #+#             */
-/*   Updated: 2026/08/27 11:41:28 by ltong            ###   ########.fr       */
+/*   Created: 2026/07/18 11:41:27 by ltong             #+#    #+#             */
+/*   Updated: 2026/08/27 23:37:06 by tonglin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static void	eat(t_philo *philo)
 {
-	pthread_mutex_lock(&philo->table->fork_lock);
 	if (philo->id % 2 == 0)
 	{
 		pthread_mutex_lock(philo->right_fork);
@@ -29,7 +28,6 @@ static void	eat(t_philo *philo)
 		pthread_mutex_lock(philo->right_fork);
 		print_status(philo, "has taken a fork");
 	}
-	pthread_mutex_unlock(&philo->table->fork_lock);
 	pthread_mutex_lock(&philo->table->state_lock);
 	philo->last_meal = get_time_ms();
 	philo->meals_eaten++;
@@ -80,6 +78,8 @@ void	*routine(void *arg)
 		print_status(philo, "is sleeping");
 		smart_sleep(philo->table, philo->table->time_to_sleep);
 		print_status(philo, "is thinking");
+		if (philo->table->philo_count % 2 == 1)
+			usleep(1000);
 	}
 	return (NULL);
 }

@@ -27,8 +27,6 @@ static int	init_mutexes(t_table *table)
 		return (FALSE);
 	if (pthread_mutex_init(&table->state_lock, NULL) != 0)
 		return (FALSE);
-	if (pthread_mutex_init(&table->fork_lock, NULL) != 0)
-		return (FALSE);
 	return (TRUE);
 }
 
