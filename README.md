@@ -44,11 +44,10 @@ make re
 
 ## Resources
 
-- POSIX threads documentation: pthread_create, pthread_join, pthread_mutex_init,
+- POSIX threads documentation: man pthread_create, pthread_join, pthread_mutex_init,
   pthread_mutex_lock, and pthread_mutex_unlock.
+- condequoi.com for threads understanding https://www.codequoi.com/en/threads-mutexes-and-concurrent-programming-in-c/
 - Linux and macOS manual pages for gettimeofday and usleep.
 - Classic descriptions of the dining philosophers problem and deadlock prevention.
 
-AI was used to help understand the project subject, draft an implementation plan, and
-create an initial code structure. The code and behavior should still be reviewed,
-tested, and explained by the student before evaluation.
+AI was used to help understand the project subject, the concepts of thread, mutex.
