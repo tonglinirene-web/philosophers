@@ -1,0 +1,54 @@
+*This project has been created as part of the 42 curriculum by ltong.*
+
+# Philosophers
+
+## Description
+
+This project implements the classic dining philosophers problem in C. Each philosopher
+is represented by a thread, and each fork is protected by a mutex. The goal is to manage
+shared resources without deadlocks or data races while respecting precise timing rules.
+
+The simulation stops when a philosopher dies or, when the optional fifth argument is
+provided, when every philosopher has eaten at least the requested number of meals.
+
+## Instructions
+
+Build the mandatory program:
+
+```sh
+cd philo
+make
+```
+
+Run it with:
+
+```sh
+./philo number_of_philosophers time_to_die time_to_eat time_to_sleep \
+  [number_of_times_each_philosopher_must_eat]
+```
+
+Example:
+
+```sh
+./philo 5 800 200 200
+./philo 5 800 200 200 7
+```
+
+Clean build files:
+
+```sh
+make clean
+make fclean
+make re
+```
+
+## Resources
+
+- POSIX threads documentation: pthread_create, pthread_join, pthread_mutex_init,
+  pthread_mutex_lock, and pthread_mutex_unlock.
+- Linux and macOS manual pages for gettimeofday and usleep.
+- Classic descriptions of the dining philosophers problem and deadlock prevention.
+
+AI was used to help understand the project subject, draft an implementation plan, and
+create an initial code structure. The code and behavior should still be reviewed,
+tested, and explained by the student before evaluation.
