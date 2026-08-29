@@ -44,8 +44,8 @@ make re
 
 ## Resources
 
-- POSIX threads documentation: man pthread_create, pthread_join, pthread_mutex_init,
-  pthread_mutex_lock, and pthread_mutex_unlock.
+- POSIX threads documentation: man pthread_create, man pthread_join, man pthread_mutex_init,
+  man pthread_mutex_lock, man pthread_mutex_unlock, man pthread_mutex_destroy, man gettimeofday.
 - condequoi.com for threads understanding https://www.codequoi.com/en/threads-mutexes-and-concurrent-programming-in-c/
 - Linux and macOS manual pages for gettimeofday and usleep.
 - Classic descriptions of the dining philosophers problem and deadlock prevention.
