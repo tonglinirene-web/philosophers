@@ -59,6 +59,19 @@ static int	philo_is_full(t_philo *philo)
 	return (full);
 }
 
+static void	think_delay(t_philo *philo)
+{
+	long	delay;
+
+	if (philo->table->philo_count % 2 == 0)
+		return ;
+	delay = philo->table->time_to_eat - philo->table->time_to_sleep + 1;
+	if (delay > 0)
+		smart_sleep(philo->table, delay);
+	else
+		usleep(500);
+}
+
 void	*routine(void *arg)
 {
 	t_philo	*philo;
@@ -78,8 +91,7 @@ void	*routine(void *arg)
 		print_status(philo, "is sleeping");
 		smart_sleep(philo->table, philo->table->time_to_sleep);
 		print_status(philo, "is thinking");
-		if (philo->table->philo_count % 2 == 1)
-			usleep(500);
+		think_delay(philo);
 	}
 	return (NULL);
 }
