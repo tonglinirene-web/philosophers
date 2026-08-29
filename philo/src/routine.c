@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   routine.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tonglin <tonglin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ltong <ltong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 11:41:27 by ltong             #+#    #+#             */
-/*   Updated: 2026/08/27 23:37:06 by tonglin          ###   ########.fr       */
+/*   Updated: 2026/08/29 17:19:05 by ltong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	*routine(void *arg)
 	if (philo->table->philo_count == 1)
 		return (one_philo(philo), NULL);
 	if (philo->id % 2 == 1)
-		usleep(1000);
+		usleep(500);
 	while (get_stop(philo->table) == FALSE)
 	{
 		if (philo_is_full(philo) == TRUE)
@@ -79,7 +79,7 @@ void	*routine(void *arg)
 		smart_sleep(philo->table, philo->table->time_to_sleep);
 		print_status(philo, "is thinking");
 		if (philo->table->philo_count % 2 == 1)
-			usleep(1000);
+			usleep(500);
 	}
 	return (NULL);
 }
